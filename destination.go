@@ -15,6 +15,21 @@ func NewDestination() sdk.Destination {
 	return &Destination{}
 }
 
+func (d *Destination) Parameters() map[string]sdk.Parameter {
+	return map[string]sdk.Parameter{
+		GlobalConfigParam: {
+			Default:     "localhost:10000",
+			Required:    true,
+			Description: "The URL of the server.",
+		},
+		DestinationConfigParam: {
+			Default:     "false",
+			Required:    false,
+			Description: "An optional configuration parameter.",
+		},
+	}
+}
+
 func (d *Destination) Configure(ctx context.Context, cfg map[string]string) error {
 	sdk.Logger(ctx).Info().Msg("Configuring a Destination connector...")
 	config, err := ParseDestinationConfig(cfg)
@@ -29,12 +44,8 @@ func (d *Destination) Open(ctx context.Context) error {
 	return nil
 }
 
-func (d *Destination) Write(ctx context.Context, record sdk.Record) error {
-	return nil
-}
-
-func (d *Destination) Flush(context.Context) error {
-	return nil
+func (d *Destination) Write(ctx context.Context, records []sdk.Record) (int, error) {
+	return 0, nil
 }
 
 func (d *Destination) Teardown(ctx context.Context) error {

@@ -12,29 +12,5 @@ func Specification() sdk.Specification {
 		Description: "<describe your connector in detail>",
 		Version:     "v0.1.0",
 		Author:      "<your name>",
-		SourceParams: map[string]sdk.Parameter{
-			GlobalConfigParam: {
-				Default:     "localhost:10000",
-				Required:    true,
-				Description: "The URL of the server.",
-			},
-			SourceConfigParam: {
-				Default:     "false",
-				Required:    false,
-				Description: "An optional configuration parameter.",
-			},
-		},
-		DestinationParams: map[string]sdk.Parameter{
-			GlobalConfigParam: {
-				Default:     "localhost:10000",
-				Required:    true,
-				Description: "The URL of the server.",
-			},
-			DestinationConfigParam: {
-				Default:     "false",
-				Required:    false,
-				Description: "An optional configuration parameter.",
-			},
-		},
 	}
 }
