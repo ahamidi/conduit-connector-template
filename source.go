@@ -17,6 +17,21 @@ func NewSource() sdk.Source {
 	return &Source{}
 }
 
+func (s *Source) Parameters() map[string]sdk.Parameter {
+	return map[string]sdk.Parameter{
+		GlobalConfigParam: {
+			Default:     "localhost:10000",
+			Required:    true,
+			Description: "The URL of the server.",
+		},
+		SourceConfigParam: {
+			Default:     "false",
+			Required:    false,
+			Description: "An optional configuration parameter.",
+		},
+	}
+}
+
 func (s *Source) Configure(ctx context.Context, cfg map[string]string) error {
 	sdk.Logger(ctx).Info().Msg("Configuring a Source Connector...")
 	config, err := ParseSourceConfig(cfg)
