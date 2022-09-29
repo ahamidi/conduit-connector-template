@@ -10,7 +10,7 @@ type Source struct {
 	sdk.UnimplementedSource
 
 	config           SourceConfig
-	lastPositionRead sdk.Position
+	lastPositionRead sdk.Position //nolint:unused // this is just an example
 }
 
 func NewSource() sdk.Source {

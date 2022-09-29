@@ -51,7 +51,7 @@ func ParseDestinationConfig(cfg map[string]string) (DestinationConfig, error) {
 }
 
 func checkEmpty(cfg map[string]string) error {
-	if cfg == nil || len(cfg) == 0 {
+	if len(cfg) == 0 {
 		return ErrEmptyConfig
 	}
 	return nil
