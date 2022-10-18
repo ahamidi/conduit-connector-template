@@ -1,8 +1,28 @@
 ### Conduit Connector Template
-This is a template project for building [Conduit](https://conduit.io) connectors in Go.
+This is a template project for building [Conduit](https://conduit.io) connectors in Go. It makes it possible to
+start working on a Conduit connector in a matter of seconds.
+
+This template includes the following:
+* Skeleton code for the connector's configuration, source and destination
+* Example unit tests
+* A `Makefile` which commonly used targets
+* GitHub workflows to build the code and run the tests
+* A dependabot setup which checks your dependencies for available updates and merges minor version upgrades automatically
+* Issue and PR templates
+* A README template
 
 ### How to use
-Clone this repo and implement the various relevant methods.
+* On this repository's main page, click the "Use this template"
+* Enter the information about your repository
+* Once your repository has been generated, clone it
+* After cloning, run `./setup.sh <module name here>` (for example: 
+`./setup.sh github.com/awesome-org/conduit-connector-file`)
+* (Optional) Set the code owners (in the `CODEOWNERS` file)
+
+With that, you're all set up and ready to start working on your connector! As a next step, we recommend that you 
+check out the [Conduit Connector SDK](https://github.com/ConduitIO/conduit-connector-sdk), which is the Go software 
+development kit for implementing a connector for Conduit.
+
 
 ### Repository settings
 Following is a list of repository settings we recommend having.
@@ -30,17 +50,10 @@ merge pull requests).
 The `spec.go` file provides a programmatic representation of the configuration options. This is used by the Conduit
 server to validate configuration and dynamically display configuration options to end users.
 
-### How to build?
-Run `make build` to build the connector.
-
-### Testing
-Run `make test` to run all the unit tests. Run `make test-integration` to run the integration tests.
-
-The Docker compose file at `test/docker-compose.yml` can be used to quickly start a Kafka instance. 
-
 ### Configuration
-There are 2 types of "configs", general configs (that apply to both Sources and Destinations) and Source/Destination 
-specific configs.
+There are 2 types of "configs":
+* general configuration (that applies to both, sources and destinations)
+* and source/destination specific configs.
 
 General configs should be added to `config/config.go` whereas any source or destination specific configs should be added
 to `source/config.go` and `destination/config.go` respectively
