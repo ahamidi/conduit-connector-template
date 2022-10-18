@@ -5,11 +5,14 @@ start working on a Conduit connector in a matter of seconds.
 This template includes the following:
 * Skeleton code for the connector's configuration, source and destination
 * Example unit tests
-* A `Makefile` which commonly used targets
-* GitHub workflows to build the code and run the tests
-* A dependabot setup which checks your dependencies for available updates and merges minor version upgrades automatically
-* Issue and PR templates
-* A README template
+* A [Makefile](/Makefile) which commonly used targets
+* A GitHub workflow to [build the code and run the tests](/.github/workflows/build.yml)
+* A GitHub workflow to [run a pre-configured set of linters](/.github/workflows/lint.yml)
+* A GitHub workflow which [automatically creates a release](/.github/workflows/release.yml) once a tag is pushed
+* A [dependabot setup](/.github/dependabot.yml) which checks your dependencies for available updates and 
+[merges minor version upgrades](/.github/workflows/dependabot-auto-merge-go.yml) automatically
+* [Issue](/.github/ISSUE_TEMPLATE) and [PR templates](/.github/pull_request_template.md)
+* A [README template](/README_TEMPLATE.md)
 
 ### How to use
 * On this repository's main page, click the "Use this template"
