@@ -15,7 +15,7 @@ This template includes the following:
 * A [README template](/README_TEMPLATE.md)
 
 ### How to use
-* On this repository's main page, click the "Use this template"
+* On this repository's main page, click "Use this template"
 * Enter the information about your repository
 * Once your repository has been generated, clone it
 * After cloning, run `./setup.sh <module name here>` (for example: 
