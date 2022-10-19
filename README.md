@@ -1,11 +1,11 @@
-### Conduit Connector Template
+# Conduit Connector Template
 This is a template project for building [Conduit](https://conduit.io) connectors in Go. It makes it possible to
 start working on a Conduit connector in a matter of seconds.
 
 This template includes the following:
 * Skeleton code for the connector's configuration, source and destination
 * Example unit tests
-* A [Makefile](/Makefile) which commonly used targets
+* A [Makefile](/Makefile) with commonly used targets
 * A GitHub workflow to [build the code and run the tests](/.github/workflows/build.yml)
 * A GitHub workflow to [run a pre-configured set of linters](/.github/workflows/lint.yml)
 * A GitHub workflow which [automatically creates a release](/.github/workflows/release.yml) once a tag is pushed
@@ -15,7 +15,7 @@ This template includes the following:
 * A [README template](/README_TEMPLATE.md)
 
 ### How to use
-* On this repository's main page, click the "Use this template"
+* On this repository's main page, click "Use this template"
 * Enter the information about your repository
 * Once your repository has been generated, clone it
 * After cloning, run `./setup.sh <module name here>` (for example: 
