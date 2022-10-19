@@ -1,4 +1,4 @@
-## Conduit Connector for <resource>
+# Conduit Connector for <resource>
 [Conduit](https://conduit.io) for <resource>.
 
 ## How to build?
