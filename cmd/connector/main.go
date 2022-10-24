@@ -3,7 +3,7 @@ package main
 import (
 	sdk "github.com/conduitio/conduit-connector-sdk"
 
-	connectorName "github.com/ahamidi/conduit-connector-template"
+	connectorName "github.com/conduitio/conduit-connector-connectorName"
 )
 
 func main() {

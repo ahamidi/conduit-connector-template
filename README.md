@@ -1,8 +1,31 @@
-### Conduit Connector Template
-This is a template project for building [Conduit](https://conduit.io) connectors in Go.
+# Conduit Connector Template
+This is a template project for building [Conduit](https://conduit.io) connectors in Go. It makes it possible to
+start working on a Conduit connector in a matter of seconds.
+
+This template includes the following:
+* Skeleton code for the connector's configuration, source and destination
+* Example unit tests
+* A [Makefile](/Makefile) with commonly used targets
+* A GitHub workflow to [build the code and run the tests](/.github/workflows/build.yml)
+* A GitHub workflow to [run a pre-configured set of linters](/.github/workflows/lint.yml)
+* A GitHub workflow which [automatically creates a release](/.github/workflows/release.yml) once a tag is pushed
+* A [dependabot setup](/.github/dependabot.yml) which checks your dependencies for available updates and 
+[merges minor version upgrades](/.github/workflows/dependabot-auto-merge-go.yml) automatically
+* [Issue](/.github/ISSUE_TEMPLATE) and [PR templates](/.github/pull_request_template.md)
+* A [README template](/README_TEMPLATE.md)
 
 ### How to use
-Clone this repo and implement the various relevant methods.
+* On this repository's main page, click "Use this template"
+* Enter the information about your repository
+* Once your repository has been generated, clone it
+* After cloning, run `./setup.sh <module name here>` (for example: 
+`./setup.sh github.com/awesome-org/conduit-connector-file`)
+* (Optional) Set the code owners (in the `CODEOWNERS` file)
+
+With that, you're all set up and ready to start working on your connector! As a next step, we recommend that you 
+check out the [Conduit Connector SDK](https://github.com/ConduitIO/conduit-connector-sdk), which is the Go software 
+development kit for implementing a connector for Conduit.
+
 
 ### Repository settings
 Following is a list of repository settings we recommend having.
@@ -27,20 +50,13 @@ Protect the default branch using the following rules:
 merge pull requests).
 
 ### Specification
-The `spec.go` file provides a programmatic representation of the configuration options. This is used by the Conduit
-server to validate configuration and dynamically display configuration options to end users.
-
-### How to build?
-Run `make build` to build the connector.
-
-### Testing
-Run `make test` to run all the unit tests. Run `make test-integration` to run the integration tests.
-
-The Docker compose file at `test/docker-compose.yml` can be used to quickly start a Kafka instance. 
+The `spec.go` file provides a programmatic representation of the configuration options.
 
 ### Configuration
-There are 2 types of "configs", general configs (that apply to both Sources and Destinations) and Source/Destination 
-specific configs.
+This template provides two types of "configs":
+* general configuration (that applies to both, sources and destinations)
+* and source/destination specific configs.
 
-General configs should be added to `config/config.go` whereas any source or destination specific configs should be added
-to `source/config.go` and `destination/config.go` respectively
+All are defined in `config.go` and are represented by separate types. General configs should be added to `connectorName.Config`,
+whereas any source or destination specific configs should be added to `connectorName.SourceConfig` and 
+`connectorName.DestinationConfig` respectively.
