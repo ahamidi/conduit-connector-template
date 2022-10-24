@@ -50,13 +50,13 @@ Protect the default branch using the following rules:
 merge pull requests).
 
 ### Specification
-The `spec.go` file provides a programmatic representation of the configuration options. This is used by the Conduit
-server to validate configuration and dynamically display configuration options to end users.
+The `spec.go` file provides a programmatic representation of the configuration options.
 
 ### Configuration
-There are 2 types of "configs":
+This template provides two types of "configs":
 * general configuration (that applies to both, sources and destinations)
 * and source/destination specific configs.
 
 General configs should be added to `config/config.go` whereas any source or destination specific configs should be added
-to `source/config.go` and `destination/config.go` respectively
+to `source/config.go` and `destination/config.go` respectively.
+
