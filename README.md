@@ -57,6 +57,6 @@ This template provides two types of "configs":
 * general configuration (that applies to both, sources and destinations)
 * and source/destination specific configs.
 
-General configs should be added to `config/config.go` whereas any source or destination specific configs should be added
-to `source/config.go` and `destination/config.go` respectively.
-
+All are defined in `config.go` and are represented by separate types. General configs should be added to `connectorName.Config`,
+whereas any source or destination specific configs should be added to `connectorName.SourceConfig` and 
+`connectorName.DestinationConfig` respectively.
